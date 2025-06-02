@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +13,7 @@
       background-color: #0d0d0d;
       color: #fff;
     }
+
     header {
       background: #000;
       display: flex;
@@ -22,11 +24,13 @@
       top: 0;
       z-index: 1000;
     }
+
     header h1 {
       margin: 0;
       font-size: 24px;
       color: #ffa502;
     }
+
     nav ul {
       list-style: none;
       display: flex;
@@ -34,15 +38,18 @@
       margin: 0;
       padding: 0;
     }
+
     nav ul li a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
     }
+
     nav ul li a:hover {
       color: #ffa502;
     }
+
     .btn-login {
       padding: 10px 20px;
       background-color: #ff4757;
@@ -62,7 +69,7 @@
       background: #1f1f1f;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }
 
     .card img {
@@ -96,24 +103,25 @@
   </style>
   <?php
   session_start();
-  
+
   if (!isset($_SESSION['user_id'])) {
-      header("Location: login.html"); // Redirect to login page if not logged in
-      exit();
+    header("Location: login.html"); // Redirect to login page if not logged in
+    exit();
   }
   ?>
-  
+
 </head>
+
 <body>
   <header>
     <h1>Music World</h1>
     <nav>
       <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="music.html">Music</a></li>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="music.php">Music</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a href="contact.php">Contact</a></li>
       </ul>
     </nav>
     <a class="btn-login" href="newform.html">Login / Register</a>
@@ -124,7 +132,8 @@
       <img src="../assets/images/musicworld.jpg" alt="Welcome">
       <div class="card-content">
         <h2>Welcome to Music World</h2>
-        <p>Discover your rhythm in our curated world of beats, vibes, and music inspirations. Every scroll takes you closer to your next favorite sound.</p>
+        <p>Discover your rhythm in our curated world of beats, vibes, and music inspirations. Every scroll takes you
+          closer to your next favorite sound.</p>
       </div>
     </div>
 
@@ -132,7 +141,8 @@
       <img src="../assets/images/genre.jpg" alt="Genres">
       <div class="card-content">
         <h2>Explore Genres</h2>
-        <p>From lo-fi to rock, jazz to electronic — find what fuels your soul. Stay tuned for daily drops and trending tracks.</p>
+        <p>From lo-fi to rock, jazz to electronic — find what fuels your soul. Stay tuned for daily drops and trending
+          tracks.</p>
       </div>
     </div>
 
@@ -140,7 +150,8 @@
       <img src="../assets/images/join.jpg" alt="Community">
       <div class="card-content">
         <h2>Join the Community</h2>
-        <p>Connect with fellow music lovers, share playlists, and vibe together. Your next favorite artist might just be one post away.</p>
+        <p>Connect with fellow music lovers, share playlists, and vibe together. Your next favorite artist might just be
+          one post away.</p>
       </div>
     </div>
   </main>
@@ -148,4 +159,5 @@
     <p>&copy; 2025 Music World. All rights reserved.</p>
   </footer>
 </body>
+
 </html>

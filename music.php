@@ -104,11 +104,11 @@
     <h1>Music World</h1>
     <nav>
       <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="music.html">Music</a></li>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="music.php">Music</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a href="contact.php">Contact</a></li>
       </ul>
     </nav>
     <a class="btn-login" href="newform.html">Login / Register</a>

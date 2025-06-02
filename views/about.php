@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +13,7 @@
       background-color: #121212;
       color: #fff;
     }
+
     header {
       background: #000;
       display: flex;
@@ -22,11 +24,13 @@
       top: 0;
       z-index: 1000;
     }
+
     header h1 {
       margin: 0;
       font-size: 24px;
       color: #ffa502;
     }
+
     nav ul {
       list-style: none;
       display: flex;
@@ -34,15 +38,18 @@
       margin: 0;
       padding: 0;
     }
+
     nav ul li a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
     }
+
     nav ul li a:hover {
       color: #ffa502;
     }
+
     .btn-login {
       padding: 10px 20px;
       background-color: #ff4757;
@@ -63,7 +70,7 @@
       background: #1f1f1f;
       border-radius: 15px;
       padding: 25px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
       width: 80%;
       max-width: 600px;
     }
@@ -81,33 +88,37 @@
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Music World</h1>
-  <nav>
-    <ul>
-      <li><a href="home.html">Home</a></li>
-      <li><a href="music.html">Music</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <a class="btn-login" href="newform.html">Login / Register</a>
-</header>
+  <header>
+    <h1>Music World</h1>
+    <nav>
+      <ul>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="music.php">Music</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a href="contact.php">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn-login" href="newform.html">Login / Register</a>
+  </header>
 
-<section class="about-content">
-  <div class="about-card">
-    <h2>About Us</h2>
-    <p>At Music World, we believe music is more than just sound—it's a way of life. Our mission is to provide music lovers with a platform to explore, share, and enjoy music from all genres and time periods.</p>
-    <p>Whether you’re into classic rock, pop hits, or underground beats, we bring you everything to enhance your musical journey.</p>
-  </div>
-</section>
+  <section class="about-content">
+    <div class="about-card">
+      <h2>About Us</h2>
+      <p>At Music World, we believe music is more than just sound—it's a way of life. Our mission is to provide music
+        lovers with a platform to explore, share, and enjoy music from all genres and time periods.</p>
+      <p>Whether you’re into classic rock, pop hits, or underground beats, we bring you everything to enhance your
+        musical journey.</p>
+    </div>
+  </section>
 
-<footer>
-  <p>&copy; 2025 Music World. All rights reserved.</p>
-</footer>
+  <footer>
+    <p>&copy; 2025 Music World. All rights reserved.</p>
+  </footer>
 
 </body>
+
 </html>
