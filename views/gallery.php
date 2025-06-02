@@ -1,5 +1,5 @@
 <?php
-include 'db_connect.php';
+include '../includes/db_connect.php';
 
 $result = $conn->query("SELECT * FROM songs ORDER BY created_at DESC");
 ?>

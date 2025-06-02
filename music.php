@@ -123,12 +123,12 @@
           <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
-        <img src="90spop.jpg" alt="90spop">
+        <img src="../assets/images/90spop.jpg" alt="90spop">
       </div>
     </div>
 
     <div class="card">
-      <img src="trending.jpg" alt="Trending Music">
+      <img src="../assets/images/trending.jpg" alt="Trending Music">
       <div class="card-content">
         <h2>Trending Now</h2>
         <p>Explore the hottest tracks topping global charts this week!</p>
@@ -136,7 +136,7 @@
     </div>
 
     <div class="card">
-      <img src="genre2.jpg" alt="Genre Vibes">
+      <img src="../assets/images/genre2.jpg" alt="Genre Vibes">
       <div class="card-content">
         <h2>Vibes by Genre</h2>
         <p>Dive into curated collections from chillhop, indie, pop, and more.</p>

@@ -1,12 +1,28 @@
+<?php
+session_start();
+
+if (isset($_SESSION['error'])) {
+  echo '<p style="color:red;">' . $_SESSION['error'] . '</p>';
+  unset($_SESSION['error']);
+}
+
+if (isset($_SESSION['success'])) {
+  echo '<p style="color:green;">' . $_SESSION['success'] . '</p>';
+  unset($_SESSION['success']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Upload Song</title>
 </head>
+
 <body>
   <h1>Upload a New Song</h1>
-  <form action="process_upload.php" method="POST" enctype="multipart/form-data">
+  <form action="../actions/process_upload.php" method="post" enctype="multipart/form-data">
     <label>Song Title:</label><br />
     <input type="text" name="title" required /><br /><br />
 
@@ -19,4 +35,5 @@
     <button type="submit">Upload Song</button>
   </form>
 </body>
+
 </html>

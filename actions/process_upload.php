@@ -1,36 +1,54 @@
 <?php
-include 'db_connect.php';  // adjust path if needed
+session_start();
 
+// Include DB connection
+include '../includes/db_connect.php';
+
+// Check if form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $title = trim($_POST['title']);
-    $artist = trim($_POST['artist']);
-    $file = $_FILES['audio'];
+    // Validate required fields
+    if (isset($_FILES['music_file']) && isset($_POST['title']) && !empty($_POST['title'])) {
+        $title = $conn->real_escape_string($_POST['title']);
 
-    // Check file type and size (optional but recommended)
-    $allowedTypes = ['audio/mpeg'];
-    if (!in_array($file['type'], $allowedTypes)) {
-        die("Error: Only MP3 files are allowed.");
-    }
+        // Handle file upload
+        $file = $_FILES['music_file'];
+        $target_dir = "../assets/uploads/";
+        $target_file = $target_dir . basename($file['name']);
 
-    // Create uploads folder if not exists
-    $uploadDir = 'uploads/';
-    if (!is_dir($uploadDir)) {
-        mkdir($uploadDir, 0755, true);
-    }
+        // Validate file type (example: only mp3, wav allowed)
+        $allowed_types = ['audio/mpeg', 'audio/wav'];
+        if (!in_array($file['type'], $allowed_types)) {
+            $_SESSION['error'] = "Only MP3 and WAV files are allowed.";
+            header("Location: ../views/upload.php");
+            exit();
+        }
 
-    $targetFile = $uploadDir . basename($file['name']);
+        // Move uploaded file
+        if (move_uploaded_file($file['tmp_name'], $target_file)) {
+            // Save upload info to database
+            $sql = "INSERT INTO music (title, filename) VALUES ('$title', '" . $conn->real_escape_string($file['name']) . "')";
 
-    if (move_uploaded_file($file['tmp_name'], $targetFile)) {
-        $stmt = $conn->prepare("INSERT INTO songs (title, artist, file_path) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $title, $artist, $targetFile);
-        if ($stmt->execute()) {
-            echo "Song uploaded successfully! <a href='gallery.php'>Go to Gallery</a>";
+            if ($conn->query($sql) === TRUE) {
+                $_SESSION['success'] = "Music uploaded successfully!";
+                header("Location: ../views/gallery.php");
+                exit();
+            } else {
+                $_SESSION['error'] = "Database error: " . $conn->error;
+                header("Location: ../views/upload.php");
+                exit();
+            }
         } else {
-            echo "Database error: " . $stmt->error;
+            $_SESSION['error'] = "Failed to move uploaded file.";
+            header("Location: ../views/upload.php");
+            exit();
         }
     } else {
-        echo "Sorry, there was an error uploading your file.";
+        $_SESSION['error'] = "Please provide a title and select a music file.";
+        header("Location: ../views/upload.php");
+        exit();
     }
 } else {
-    echo "Invalid request.";
+    // Invalid request method
+    header("Location: ../views/upload.php");
+    exit();
 }

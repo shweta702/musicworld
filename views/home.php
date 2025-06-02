@@ -121,7 +121,7 @@
 
   <main>
     <div class="card">
-      <img src="musicworld.jpg" alt="Welcome">
+      <img src="../assets/images/musicworld.jpg" alt="Welcome">
       <div class="card-content">
         <h2>Welcome to Music World</h2>
         <p>Discover your rhythm in our curated world of beats, vibes, and music inspirations. Every scroll takes you closer to your next favorite sound.</p>
@@ -129,7 +129,7 @@
     </div>
 
     <div class="card">
-      <img src="genre.jpg" alt="Genres">
+      <img src="../assets/images/genre.jpg" alt="Genres">
       <div class="card-content">
         <h2>Explore Genres</h2>
         <p>From lo-fi to rock, jazz to electronic — find what fuels your soul. Stay tuned for daily drops and trending tracks.</p>
@@ -137,7 +137,7 @@
     </div>
 
     <div class="card">
-      <img src="join.jpg" alt="Community">
+      <img src="../assets/images/join.jpg" alt="Community">
       <div class="card-content">
         <h2>Join the Community</h2>
         <p>Connect with fellow music lovers, share playlists, and vibe together. Your next favorite artist might just be one post away.</p>
