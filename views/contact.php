@@ -100,7 +100,7 @@
         <li><a href="contact.php">Contact</a></li>
       </ul>
     </nav>
-    <a class="btn-login" href="newform.html">Login / Register</a>
+    <a class="btn-login" href="../auth/newform.html">Login / Register</a>
   </header>
 
   <section class="contact-content">

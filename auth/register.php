@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("sss", $username, $email, $hashed_password);
 
     if ($stmt->execute()) {
-        echo "Registration successful! <a href='newform.html'> Login </a>";
+        echo "Registration successful! <a href='../auth/newform.html'> Login </a>";
     } else {
         echo "Error: " . $stmt->error;
     }

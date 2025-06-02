@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             echo "Login successful! Welcome, " . $_SESSION['username'] . "!";
-            header("Location: home.html"); // Redirect to a logged-in page
+            header("Location: home.php"); // Redirect to a logged-in page
         } else {
             echo "Invalid password.";
         }
